@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect
-from hospitalapp import *
-from hospitalapp.models import appointment
+from hospitalapp.models import *
 
 
 # Create your views here.
@@ -54,13 +53,13 @@ def contacts(request):
   return render(request,'contact.html')
 
 
-def contacting(request):
+def contacts(request):
   if request.method == "POST":
     mycontacts = contact(
       name=request.POST['name'],
       email=request.POST['email'],
       subject=request.POST['subject'],
-      message=request.POST['message'],
+      message=request.POST['message']
      )
     mycontacts.save()
     return redirect('/contact')
