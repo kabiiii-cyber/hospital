@@ -92,4 +92,9 @@ def edit(request,id):
   else:
     return render(request,'edit.html',{'appointment1':appointment1})
 
+def register(request):
+    return render(request, 'register.html')
+
+def login_view(request):
+    return render(request, 'login.html')
 
